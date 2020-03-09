@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+
+        <title>First Javascript</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    數字:<input type="text"name="num"id="num" value="1"/><br/>
+    <button onclick="check()">檢查</button>
+    <script type="text/javascript">
+        function check()
+        {
+            var n = document.getElementById("num");
+            var value = n.value;
+            if (!isNaN(value))
+                alert(value + "是數字");
+            else
+                alert(value + "不是數字");
+        }
+    </script>
+
+</html>
