@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class getCounter_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class LoginBean_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -51,10 +51,30 @@ public final class getCounter_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <title>JSP Page</title>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
-      out.write("        <h1>Hello World!</h1>\n");
-      out.write("        <h1>session bean1: ");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${sessionScope.bean1.counter}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write(" </h1>\n");
+      out.write("         ");
+      beans.LoginBean user = null;
+      synchronized (_jspx_page_context) {
+        user = (beans.LoginBean) _jspx_page_context.getAttribute("user", PageContext.PAGE_SCOPE);
+        if (user == null){
+          user = new beans.LoginBean();
+          _jspx_page_context.setAttribute("user", user, PageContext.PAGE_SCOPE);
+          out.write("\n");
+          out.write("               ");
+          org.apache.jasper.runtime.JspRuntimeLibrary.introspect(_jspx_page_context.findAttribute("user"), request);
+          out.write("\n");
+          out.write("          ");
+        }
+      }
+      out.write("\n");
+      out.write("        Name: ");
+      out.write(org.apache.jasper.runtime.JspRuntimeLibrary.toString((((beans.LoginBean)_jspx_page_context.findAttribute("user")).getUser())));
+      out.write(" <br/>\n");
+      out.write("        Password:");
+      out.write(org.apache.jasper.runtime.JspRuntimeLibrary.toString((((beans.LoginBean)_jspx_page_context.findAttribute("user")).getPassword())));
+      out.write("\n");
+      out.write("        Phone:");
+      out.write(org.apache.jasper.runtime.JspRuntimeLibrary.toString((((beans.LoginBean)_jspx_page_context.findAttribute("user")).getPhone())));
+      out.write("\n");
       out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {
