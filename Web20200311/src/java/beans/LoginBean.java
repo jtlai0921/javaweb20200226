@@ -1,12 +1,14 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package beans;
 
-/**
- *
- * @author Administrator
- */
 public class LoginBean {
     private String user;
     private String password;
+    private String phone;
     public LoginBean(){}    
 
     /**
@@ -36,5 +38,18 @@ public class LoginBean {
     public void setPassword(String password) {
         this.password = password;
     }
-}
 
+    /**
+     * @return the phone
+     */
+    public String getPhone() {
+        return phone;
+    }
+
+    /**
+     * @param phone the phone to set
+     */
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+}
