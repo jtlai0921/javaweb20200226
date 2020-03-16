@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>javascript Array</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        No:<input type="text"id="num"value="1"/><br/>
+        <button onclick="Add()"/>Add</button>
+    <button onclick="show()"/>show</button>
+<script>
+    var data=[];
+    function add(){
+        var n=document.getElementById("num");
+        data.push(n.value);
+    }
+    function show(){
+        var str="";
+        for(var i=0; i<data.length;i++)
+            str+=data[i]+"";
+        alert(str);
+    }
+    </script>
+    </body>
+</html>
