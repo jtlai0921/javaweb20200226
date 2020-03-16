@@ -10,6 +10,9 @@ public class GuessGameLogic {
   private int remainder = 5;
   private String hint;
   public GuessGameLogic() {}
+   public GuessGameLogic(int startNumber, int endNumber) {
+      initialize( startNumber,  endNumber);
+   }
   public void initialize(int startNumber, int endNumber) {
     this.theNumber = generateRandomNumber(startNumber , endNumber);
   }
