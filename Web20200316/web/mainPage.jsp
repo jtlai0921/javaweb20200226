@@ -14,7 +14,7 @@
     <body>
          <h1>Calculation</h1>
         <%
-                String s="A";
+                String s="X";
                 int v=Integer.parseInt(s);
                 out.println(v);
             %>
