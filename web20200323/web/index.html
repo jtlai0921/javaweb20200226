@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>javascript picture</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body><img src="imgs/p1.jpg"id="pic1"
+         width="800"height="600"/>
+    <button onclick="start()">開始輪替</button>
+    <script>
+        var count=0;
+       var pics=["imgs/p1.jpg","imgs/p2.jpg","imgs/p3.jpg","imgs/p4.jpg"];
+       function change(){
+           count++;
+           if(count>=pics.length)
+               count=0;
+           var p=document.getElementById("pic1");
+           p.src=pics[count];
+       }
+       function start(){
+      //
+           window.setInterval(change,100);
+       }
+    </script></body>
+</html>
