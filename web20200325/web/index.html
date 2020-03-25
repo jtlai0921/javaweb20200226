@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>JSON</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        Book Name:<input type="text" id="bookname"
+                         value="JSP Java"/><br/>
+        price<input type="text" id="price"
+                         value="500"/><br/>
+        <button onclick="add()">Add</button>
+        <button onclick="show()">show</button>
+        <script>
+            var data=[];
+            function add(){
+                var n=document.getElementById("bookname");
+                var p=document.getElementById("price");
+                var obj=new Object();
+                obj.name=n.value;obj.price=p.value;
+                data.push(obj);
+                alert("新增完成");
+            }
+            function show(){
+                var st="";
+                for(i=0;i<data.length;i++)
+                    st+=data[i].name+","+data[i].price+"\n";
+                alert(st);
+            }
+            </script>
+    </body>
+</html>
