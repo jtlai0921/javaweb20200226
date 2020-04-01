@@ -20,7 +20,10 @@ and open the template in the editor.
                   $("button").click(function(){                               
                       
                        $.post("SupplierJsonServlet",{"supid": $("#supid").val()}, function(data){
-                              $("#div1").html(data);   
+                                var obj=JSON.parse(data);
+                                var s=obj.sup_id+","+obj.sup_name+","+obj.city;
+                                $("#div1").html(s);
+                              
                        });
                   });
                 

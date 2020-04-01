@@ -37,7 +37,7 @@ public class SupplierJsonServlet extends HttpServlet {
         String s1=query(id);
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("supplier json data=>"+s1);
+            out.println(s1);
             
         }
     }
