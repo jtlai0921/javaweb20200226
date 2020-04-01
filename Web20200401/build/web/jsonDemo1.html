@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>JSON</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
+        User: <input type="text" id="user" value="Amy"/><br/>
+        Password: <input type="password" id="pass" value="1234"/><br/>
+        <button> send</button>
+        <div id="div1"></div>
+         <script>
+             $(document).ready(function(){
+                  $("button").click(function(){
+                      var obj=new Object();
+                      obj.user=$("#user").val();
+                      obj.password=$("#pass").val();
+                      var st=JSON.stringify(obj);
+                      //alert(st);
+                       $.post("JsonServlet",{"data": st}, function(data){
+                              $("#div1").html(data);   
+                       });
+                  });
+                
+             });
+        </script>
+    </body>
+</html>
