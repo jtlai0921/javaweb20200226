@@ -17,16 +17,18 @@ and open the template in the editor.
         <button> send</button>
         <div id="div1"></div>
          <script>
+             var arry=[ ];
              $(document).ready(function(){
-                  $("button").click(function(){
+                  $("button").click(function(){                      
                       var obj=new Object();
                       obj.user=$("#user").val();
                       obj.password=$("#pass").val();
-                      var st=JSON.stringify(obj);
-                      //alert(st);
-                       $.post("JsonServlet",{"data": st}, function(data){
-                              $("#div1").html(data);   
-                       });
+                      arry.push(obj);                      
+                      var st=JSON.stringify(arry);
+                      alert(st);
+                       //$.post("JsonServlet",{"data": st}, function(data){
+                       //       $("#div1").html(data);   
+                       //});
                   });
                 
              });
