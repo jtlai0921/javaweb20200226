@@ -1,0 +1,25 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <H1>產品資料輸入</H1>
+        <form action="insertProduct" method="post">
+               產品編號:<input type="text" id="pid" name="pid" value="P001"/><br/>
+               產品名稱:<input type="text" id="pname" name="pname" value="iPhone 6"/><br/>
+               產品單價:<input type="text" id="price" name="price" value="20000"/><br/>
+               產品產地:<input type="text" id="place" name="place" value="美國"/><br/>
+               <input type="submit" value="上傳儲存"/>
+        </form>
+        <form action="searchProduct" method="post">
+            搜尋: <input type="text" id="sname" name="sname" value="iPhone"/>
+            <input type="submit" value="搜尋"/>
+        </form>
+    </body>
+</html>
