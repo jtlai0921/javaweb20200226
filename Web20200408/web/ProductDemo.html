@@ -32,7 +32,7 @@ and open the template in the editor.
                     alert(JSON.stringify(arry));
                 }
                 function savedb(){
-                    if(arry.length>0){
+                    if(arry.length=0){
                         var str=JSON.stringify(arry);
                         $.post("InsertProductServlet",{"products":str},function(data){
                               alert(data);
