@@ -1,0 +1,45 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <H1>產品資料輸入</H1>       
+               產品編號:<input type="text" id="pid" name="pid" value="P001"/><br/>
+               產品名稱:<input type="text" id="pname" name="pname" value="iPhone 6"/><br/>
+               產品單價:<input type="text" id="price" name="price" value="20000"/><br/>
+               產品產地:<input type="text" id="place" name="place" value="美國"/><br/>
+               <input type="button" onclick="save()" value="儲存"/>
+               <input type="button" onclick="savedb()" value="上傳資料庫儲存"/>
+               <p>
+            搜尋: <input type="text" id="sname" name="sname" value="iPhone"/>
+            <input type="button" onclick="search()" value="搜尋"/>
+          <script>
+                var arry=[ ];
+                function save(){
+                    var obj=new Object();
+                    obj.pid=$("#pid").val();
+                    obj.productName=$("#pname").val();
+                    obj.price=$("#price").val();
+                    obj.place=$("#place").val();
+                    arry.push(obj);
+                    alert(JSON.stringify(arry));
+                }
+                function savedb(){
+                    if(arry.length>0){
+                        var str=JSON.stringify(arry);
+                        $.post("InsertProductServlet",{"products":str},function(data){
+                              alert(data);
+                        });                    
+                        
+                    }
+                }
+          </script>
+    </body>
+</html>
