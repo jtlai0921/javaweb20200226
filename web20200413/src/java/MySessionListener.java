@@ -1,6 +1,8 @@
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
+import javax.servlet.ServletContextListener;
+import javax.servlet.annotation.WebListener;
 import javax.servlet.http.HttpSessionAttributeListener;
 import javax.servlet.http.HttpSessionBindingEvent;
 import javax.servlet.http.HttpSessionEvent;
@@ -17,7 +19,8 @@ import javax.servlet.http.HttpSessionListener;
  *
  * @author teacher
  */
-public class MySessionListener implements HttpSessionListener, HttpSessionAttributeListener {
+@WebListener
+public class MySessionListener implements ServletContextListener , HttpSessionListener, HttpSessionAttributeListener {
    ServletContext context;
     int users=0;  
    //HttpSessionAttributeListener
@@ -40,6 +43,7 @@ public class MySessionListener implements HttpSessionListener, HttpSessionAttrib
      users++;
      logout("sessionCreated('" + event.getSession().getId() + "'),目前有"+users+"個用戶");
      context.setAttribute("users",new Integer(users));
+     System.out.println("user context init:"+context.getAttribute("users"));
     }
     public void sessionDestroyed(HttpSessionEvent event) {
      users--;
@@ -57,7 +61,7 @@ public class MySessionListener implements HttpSessionListener, HttpSessionAttrib
     }
     public void contextInitialized(ServletContextEvent sce) {
      this.context = sce.getServletContext();
-     logout("contextInitialized()-->ServletContext初始化了");
+     logout("users contextInitialized()-->ServletContext初始化了");
     }//ServletContextListener
    
 

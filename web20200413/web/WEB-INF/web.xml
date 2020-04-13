@@ -8,10 +8,7 @@
         <description>ServletContextListener</description>
         <listener-class>InitializeProductList</listener-class>
     </listener>
-    <listener>
-        <description>HttpSessionListener, HttpSessionAttributeListener</description>
-        <listener-class>MySessionListener</listener-class>
-    </listener>
+    
     <session-config>
         <session-timeout>
             30
